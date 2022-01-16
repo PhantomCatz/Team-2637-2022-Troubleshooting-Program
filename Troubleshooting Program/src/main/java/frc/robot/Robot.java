@@ -79,6 +79,7 @@ public class Robot extends TimedRobot
   public void teleopInit() 
   {
     System.out.println("X = SparkMax\nA = Talon\nY = Victor\nB = Stop Motor");
+    testmotors.checkIDs();
   }
 
   @Override

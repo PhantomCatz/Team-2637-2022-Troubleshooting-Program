@@ -14,10 +14,10 @@ public class TestMotors
     public WPI_TalonSRX TalonMTR;
     public WPI_VictorSPX VictorMTR;
     
-
-    private final int SPARKMAX_MC_ID = -99999; 
-    private final int TALON_MC_ID = 11; 
-    private final int VICTOR_MC_ID = -99999; 
+    // USE REV CLIENT OR PHEONIX TUNER TO GET CAN IDs
+    private final int SPARKMAX_MC_ID = -1;
+    private final int TALON_MC_ID = -1; 
+    private final int VICTOR_MC_ID = -1; 
 
     private final double MTR_PWR = 0.3;
 
@@ -36,6 +36,25 @@ public class TestMotors
 
         //Set SparkMaxMTR to brake mode
         SparkMaxMTR.setIdleMode(IdleMode.kBrake);
+
+    }
+
+    public void checkIDs()
+    {
+        if(SPARKMAX_MC_ID <= -1)
+        {
+            System.out.print("NO ID ASSIGNED TO SPARKMAX");
+        }
+
+        if(TALON_MC_ID <= -1)
+        {
+            System.out.print("NO ID ASSIGNED TO TALON");
+        }
+
+        if(VICTOR_MC_ID <= -1)
+        {
+            System.out.print("NO ID ASSIGNED TO VICTOR");
+        }
     }
 
     public void testSparkMax()
